@@ -86,20 +86,50 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     //  *  a new <h2> with text,
     const h2El = document.createElement('h2');
-    // const h2Text = document.textContent('Omsk');
-    // divEl.appendChild(h2El);
+    divEl.appendChild(h2El);
+    const h2Text = document.createTextNode('Omsk');
+    h2El.appendChild(h2Text);
+    
    
     // //  *  and a new <p> with some text.
-    //const pEl = document.createElement('p');
-    // pEl.textContent("I GOT FROZEN THERE");
+    const pEl = document.createElement('p');
+    divEl.appendChild(pEl);
+    const pElText = document.createTextNode("I GOT FROZEN THERE");
+    pEl.appendChild(pElText);
     //  *  Think about what order you want to create the elements, and what order you want to append them in.
     
-
+  //Event Handlers
 
   // Part 8
+  /**
+   * * Query select the #quote-title ID element and add a click event handler. 
+   * That event handler should use the function randomQuote whenever #quote-titleis clicked.
+   */
+  const quoteTitle = this.getElementById('quote-title');
+  quoteTitle.onclick = randomQuote;
 
 
   // Part 9
+  /**
+   * Select all .blog-post class elements. 
+   * Iterate through the list of .blog-postclass elements and apply two event handlers to each node.
+   * The first event handler should be listening for mouseout events
+   *  while the second handler should be listening for mouseenter events.
+
+    The mouseout handler should toggle the class .purple
+    The mouseenter handler should toggle the class .red
+   */
+  const blogPosts = this.querySelectorAll('.blog-post');
+  for(let blogPost of blogPosts){
+    blogPost.addEventListener('mouseout',(event)=>{
+      event.target.classList.toggle('.red')
+
+    });
+    blogPost.addEventListener('mouseenter', (event)=>{
+      event.target.classList.toggle('.purple')
+
+    })
+  }
 
 
 
