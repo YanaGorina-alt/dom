@@ -122,13 +122,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
   const blogPosts = this.querySelectorAll('.blog-post');
   for(let blogPost of blogPosts){
     blogPost.addEventListener('mouseout',(event)=>{
-      event.target.classList.toggle('.red')
+      event.target.classList.toggle('red')
 
     });
     blogPost.addEventListener('mouseenter', (event)=>{
-      event.target.classList.toggle('.purple')
+      event.target.classList.toggle('purple')
 
-    })
+    });
   }
 
 
