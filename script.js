@@ -53,9 +53,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
   //pastRaces.childNodes -> NodeList (array-like object)
   //pastRaces.children -> HTML Collection
   //console.log(pastRaces);
-  const race = document.querySelector('#past-races').children[3];// "li" element/node
+  //const race = document.querySelector('#past-races').children[3];// "li" element/node
   //console.log(race);
-  pastRaces.removeChild(race);
+  //pastRaces.removeChild(race);
+  pastRaces.children[3].remove();
+  
 
   // Creating New DOM Elements
 
@@ -76,11 +78,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
      * Create a new .blog-post corresponding to the new city added in Part 6. 
      * You will have to create a new <div> with class of .blog-post,
      * */
-    const main = document.querySelectorAll('.main');
+    const main = document.querySelector('.main');
     //console.log(main);
     const divEl = document.createElement('div');
     //console.log( typeof divEl);
-    main[0].appendChild(divEl);
+    main.appendChild(divEl);
     divEl.classList.add('blog-post');
     
 
@@ -106,7 +108,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
    * That event handler should use the function randomQuote whenever #quote-titleis clicked.
    */
   const quoteTitle = this.getElementById('quote-title');
-  quoteTitle.onclick = randomQuote;
+  //quoteTitle.onclick = randomQuote; -> this one works as well
+  quoteTitle.addEventListener('click', randomQuote);
 
 
   // Part 9
